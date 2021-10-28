@@ -12,8 +12,8 @@ password = 'Schuelerlabor'
 #password = 'dein_passwort'
 #mqtt_server = 'broker.hivemq.com'
 mqtt_server = "34.194.225.123"
-CHANNEL_ID    = "1533730"
-WRITE_API_KEY = 'OFSMOZN1COHG6PAV'
+CHANNEL_ID    = "1552409"
+WRITE_API_KEY = 'Q48AIVO8OZ6793OY'
 topic_pub = "channels/" + CHANNEL_ID + "/publish/" + WRITE_API_KEY
 
 client_id = ubinascii.hexlify(machine.unique_id())
