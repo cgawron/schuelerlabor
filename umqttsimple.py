@@ -1,3 +1,5 @@
+#  Versions of micropython since version 1.12 include the umqtt library
+
 #!/usr/bin/env python
 #
 # Copyright (c) 2019, Pycom Limited.
