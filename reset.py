@@ -1,9 +1,12 @@
 import machine
 
-class Reset:
+class Reset():
     def __init__(self):
         self._typ = self.gettyp()
-        self._message= machine.RTC().memory().decode()
+        self._message = '---'
+        
+        
+    ''' resettyp als text ausgeben '''
     def gettyp(self):
         x=machine.reset_cause()
         y='unbekannter'
@@ -19,6 +22,8 @@ class Reset:
             y= "watchdog"
         return y
     
+    '''  @property bedeutet, dass die folgende funktion wie eine variable aufgerufen
+         wird; also ohne () ; z.b. text= reset.typ '''
     @property
     def typ(self):
         return self._typ

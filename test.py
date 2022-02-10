@@ -6,7 +6,9 @@ import batterie
 
 
 i2c = I2C(scl=Pin(5), sda=Pin(4), freq=100000)
-bme = BME280(address=0x77, i2c=i2c)
+i2c_adr= i2c.scan()[0]
+print(f'BME280 I2Cadr= {hex(i2c_adr)}')
+bme = BME280(address=i2c_adr, i2c=i2c)    
 sleep(2)
 
 print( f'   Temperatur= {bme.temperature} Grad C')
