@@ -1,8 +1,22 @@
-# Schülerlabor 2021 – Wetterstation mit ESP8266 & BME280
+# Schülerlabor 2023 – Wetterstation mit ESP8266 & BME280
 Wir bauen eine Wetterstation auf Basis eines ESP8266 Mikrocontrollers und eines [BME280 Sensors](https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/).
 
 ## Installation Micropython
-Dokumentation folgt.
+Für unser Projekt müssen wir [MicroPython](https://micropython.org) auf dem Mikrocontroller installieren.
+
+Die passende Version laden wir von der Seite
+[micropython.org/download/ESP8266_GENERIC](https://micropython.org/download/ESP8266_GENERIC)
+herunter. Auf der Kommandozeile geht dies mit dem Befehl
+```bash
+wget https://micropython.org/resources/firmware/ESP8266_GENERIC-20231005-v1.21.0.bin
+```
+
+Anschließend müssen wir diese Datei auf den Mikrocontroller *flashen*. Dies geht mit den Befehlen
+```bash
+esptool.py --port /dev/ttyUSB0 erase_flash
+esptool.py --port /dev/ttyUSB0 write_flash --flash_size=detect 0 ESP8266_GENERIC-20231005-v1.21.0.bin
+```
+
 
 ## Auslesen der Sensorwerte
 Dokumentation folgt.
