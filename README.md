@@ -19,7 +19,15 @@ esptool.py --port /dev/ttyUSB0 write_flash --flash_size=detect 0 ESP8266_GENERIC
 
 
 ## Auslesen der Sensorwerte
-Dokumentation folgt.
+Um die Werte des [BME280 Sensors](https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/) auszulesen, müssen wir den Sensor
+- mit Spannung versorgen ($3.3 V$ und Masse),
+- ihn per I2C-Bus mit dem ESP8266 verbinden.
+
+Die nötige Spannung von $3.3V$ erzeugt die D1-Mini Platine über einen auf der Platine aufgelöteten Spannungswandler (der ESP8266 benötigt ebenfalls eine Betriebsspannung von $3.3 V$, während USB $5 V$ verwendet).
+Die Verbindung per I2C erfolgt über die ESP-Pins `GPIO5` (SCL) und `GPIO4` (SDA). Um die Verwirrung größer zu machen, tragen diese ESP-Pins auf dem D1-Mini die Bezeichnungen `D1` bzw. `D2`. 
+
+Die nötige Verschaltung ist daher wie folgt:
+![Schaltplan](D1_BME280_Steckplatine.png)
 
 ## MQTT-Verbindung
 Wir wollen die Daten nun "von außen" – also ohne USB-Verbindung zum ESP8266 Board – auslesen.
