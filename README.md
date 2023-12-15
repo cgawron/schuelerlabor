@@ -29,6 +29,22 @@ Die Verbindung per I2C erfolgt über die ESP-Pins `GPIO5` (SCL) und `GPIO4` (SDA
 Die nötige Verschaltung ist daher wie folgt:
 ![Schaltplan](D1_BME280_Steckplatine.png)
 
+## Programmablaufplan für das Auslesen der Sensorwerte
+
+Unser Programm `client.py` soll 
+- sich nach dem Start mit dem WLAN verbinden (das benötigen wir später, um unsere Daten in die "Cloud" zu schreiben),
+- den Sensor initialisieren, und dann
+- regelmäßig alle 30 Sekunden die Sensordaten lesen und ausgeben.
+
+Früher (zu Zeiten, als PCs noch so
+![IBM PC aus den 80er Jahren](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/IBM_PC-IMG_7271_%28transparent%29.png/320px-IBM_PC-IMG_7271_%28transparent%29.png) aussahen) hat man Programme über 
+[Programmablaufpläne nach DIN 66001](https://de.wikipedia.org/wiki/Programmablaufplan) dokumentiert.
+
+> <div style="padding: 2ex;">
+> <span style="font-weight: bold;">Aufgabe</span>: 
+> Erstellt zu dem oben skizzierten Ablauf einen <a href="https://de.wikipedia.org/wiki/Programmablaufplan">Programmablaufplan</a>.
+> </div>
+
 ## MQTT-Verbindung
 Wir wollen die Daten nun "von außen" – also ohne USB-Verbindung zum ESP8266 Board – auslesen.
 Die Idee ist folgende:
